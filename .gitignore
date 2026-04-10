@@ -1,0 +1,45 @@
+# ── Simulator Data (too large for git, share via Google Drive / USB) ─────────
+data/
+
+# ── Trained model (large binary file) ────────────────────────────────────────
+# Remove this line if you want to commit model.h5 to the repo.
+# If you do commit it, warn teammates it may be 50-200 MB.
+# model.h5
+
+# ── Generated output files ───────────────────────────────────────────────────
+training_plot.png
+*.png
+*.mp4
+*.mov
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Conda / pip environments (never commit these) ────────────────────────────
+env/
+venv/
+.env
+*.egg-info/
+
+# ── macOS system files ────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Windows system files ──────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+
+# ── JetBrains IDEs (PyCharm, etc.) ───────────────────────────────────────────
+.idea/
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/
+
+# ── Jupyter Notebooks (if anyone uses them for exploration) ──────────────────
+.ipynb_checkpoints/
+*.ipynb
