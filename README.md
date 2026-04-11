@@ -97,6 +97,7 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 
 ```bash
 conda create -n dps920 python=3.8
+conda init powershell
 conda activate dps920
 pip install tensorflow==2.3.0
 pip install flask==1.1.2 flask-socketio==3.3.1
