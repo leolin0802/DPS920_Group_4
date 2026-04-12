@@ -4,7 +4,7 @@ data/
 # ── Trained model (large binary file) ────────────────────────────────────────
 # Remove this line if you want to commit model.h5 to the repo.
 # If you do commit it, warn teammates it may be 50-200 MB.
-# model.h5
+model.h5
 
 # ── Generated output files ───────────────────────────────────────────────────
 training_plot.png
