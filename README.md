@@ -101,11 +101,13 @@ conda init powershell       # if first time using conda and environment not acti
 conda config --add channels conda-forge       # if the below packages are not found
 conda activate dps920
 pip install tensorflow
-pip install flask==1.1.2 flask-socketio==3.3.1
+pip install flask==2.0.3 flask-socketio==3.3.1
 pip install python-socketio==4.2.1 python-engineio==3.8.2
-pip install eventlet==0.25.1
+pip install eventlet==0.33.3
 pip install opencv-python numpy pandas matplotlib scikit-learn pillow
 pip install imgaug
+pip uninstall werkzeug -y
+pip install werkzeug==2.0.3
 ```
 
 ---
