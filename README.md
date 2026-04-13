@@ -96,10 +96,10 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 #### Option B – pip (if conda fails)
 
 ```bash
-conda create -n dps920 python=3.8
-conda init powershell
+conda create -n dps920 python=3.11
+conda init powershell (if first time using conda and environment not activating)
 conda activate dps920
-pip install tensorflow==2.3.0
+pip install tensorflow
 pip install flask==1.1.2 flask-socketio==3.3.1
 pip install python-socketio==4.2.1 python-engineio==3.8.2
 pip install eventlet==0.25.1
