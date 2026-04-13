@@ -97,7 +97,8 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 
 ```bash
 conda create -n dps920 python=3.11
-conda init powershell (if first time using conda and environment not activating)
+conda init powershell       # if first time using conda and environment not activating
+conda config --add channels conda-forge       # if the below packages are not found
 conda activate dps920
 pip install tensorflow
 pip install flask==1.1.2 flask-socketio==3.3.1
