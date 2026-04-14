@@ -96,18 +96,19 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 #### Option B – pip (if conda fails)
 
 ```bash
-conda create -n dps920 python=3.11
-conda init powershell       # if first time using conda and environment not activating
-conda config --add channels conda-forge       # if the below packages are not found
-conda activate dps920
-pip install tensorflow
-pip install flask==2.0.3 flask-socketio==3.3.1
-pip install python-socketio==4.2.1 python-engineio==3.8.2
+# Create venv with Python 3.11
+& "C:\...\Python311\python.exe" -m venv .venv
+.venv\Scripts\activate
+
+# Install dependencies in this order
+pip install numpy==1.26.4
+pip install tensorflow==2.13.0
+pip install flask==2.0.3 werkzeug==2.0.3
+pip install flask-socketio==5.3.4
+pip install python-socketio==5.8.0 python-engineio==4.5.1
 pip install eventlet==0.33.3
-pip install opencv-python numpy pandas matplotlib scikit-learn pillow
-pip install imgaug
-pip uninstall werkzeug -y
-pip install werkzeug==2.0.3
+pip install opencv-python pandas matplotlib scikit-learn pillow imgaug
+pip install scipy==1.11.4 --force-reinstall
 ```
 
 ---
@@ -162,12 +163,14 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 
 5. Click **RECORD** (top menu, red button) and choose your project's `data/` folder.
 
-6. Drive the car using mouse steering:
+6. Click **RECORD** again to actually start the recoding of data to be stored.
+
+7. Drive the car using mouse steering:
    - **5 laps forward** on the left track
    - **5 laps in reverse** (turn the car around and drive the other way)
    - Use smooth mouse movements for cleaner steering labels
 
-7. Click **RECORD** again to stop. The simulator saves:
+8. Click **RECORD** again to stop. The simulator saves:
    - `data/IMG/` – thousands of camera images
    - `data/driving_log.csv` – the steering log
 
