@@ -145,7 +145,7 @@ def sendControl(steering, throttle):
 
 if __name__ == '__main__':
     # Load the trained model from disk
-    model = load_model('model.h5')
+    model = load_model('model.h5', safe_mode=False)
     print('Model loaded successfully. Waiting for simulator connection on port 4567...')
 
     # Wrap Flask app with Socket.IO middleware
