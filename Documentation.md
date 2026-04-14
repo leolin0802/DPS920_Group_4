@@ -23,11 +23,16 @@ This project implements an end-to-end self-driving car simulation using a CNN ba
 
 - **Data Collection:** The car was driven manually in Training Mode for approximately 5 laps forward and 5 laps in reverse on Track 1 using mouse steering for smooth steering labels.
 
-- **Data Balancing:** The raw dataset is heavily biased toward a steering angle of 0°. Histogram-based balancing was used to remove over-represented bins and produce a more uniform distribution.
+- **Data Balancing:** The raw dataset is heavily biased toward a steering angle of 0°. Histogram-based balancing was used to remove over-represented bins and produce a more uniform distribution.<br>
+Balancing gives the model more appropriate data to work with because when the data is steering 0° majority of the time, highest bin, it overshadows the few turns made by the car on the track. When the model gets trained on this data, it will learns incorrectly that it should also always go straight even if a turn is needed. It goes off the track. By removing samples from the over represented straight steering bins, the model will account for the loss of turns and going straight, finding the balance between both and learning to turn when necessary.
+<br>
 
 - **Data Augmentation:** Applied randomly to training images only — flipping (with steering negation), panning, brightness adjustment, and zooming.
 
-- **Preprocessing:** Crop rows 60–135 → convert RGB to YUV → Gaussian blur → resize to 200×66 → normalize to [0, 1].
+- **Preprocessing:** Crop rows 60–135 → convert RGB to YUV → Gaussian blur → resize to 200×66 → normalize to [0, 1].<br>
+Cropping the rows can remove the sky, trees, and distant horizon which are not important to tracking the road, so the model can focus on the road and remove unnecessary noise and processing.
+Gaussian blur removes noise and sharp edges from leaves or shadows so that the model learns general curves and boundaries of the road rather than exact pixel details
+<br>
 
 - **Model:** NVIDIA end-to-end CNN — 5 convolutional layers, flatten, dropout (0.5), 4 dense layers (100 → 50 → 10 → 1). Loss: MSE. Optimizer: Adam.
 
