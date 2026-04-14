@@ -43,11 +43,11 @@ from dataPreprocessing import prepareData, batchGenerator
 # ══════════════════════════════════════════════════════════════════════════════
 
 DATA_PATH        = 'data'    # folder containing driving_log.csv + IMG/
-BATCH_SIZE       = 100       # samples per gradient update
-EPOCHS           = 30        # number of full passes through the generator
+BATCH_SIZE       = 50        # samples per gradient update
+EPOCHS           = 10        # number of full passes through the generator
 LEARNING_RATE    = 1e-3      # Adam learning rate
-STEPS_PER_EPOCH  = 300       # generator steps per epoch (= samples seen / batch)
-VALIDATION_STEPS = 200       # generator steps for validation
+STEPS_PER_EPOCH  = 200       # generator steps per epoch (= samples seen / batch)
+VALIDATION_STEPS = 100       # generator steps for validation
 
 
 # ══════════════════════════════════════════════════════════════════════════════
